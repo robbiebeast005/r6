@@ -16,28 +16,24 @@ function App() {
       title : string
       video : string
       tag : string
-      opperator : string
+      opperator : string,
+      description : string
   }
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  const images = [DroneImage, x, y];
+  const images = [DroneImage, DroneImage, DroneImage];
 
   const [optionPicked, setOptionPicked] = useState("")
 
   const items : props[] = [
     {
-      title: "Valk c4", 
+      title: "C4 below cafe", 
       video: v1, 
-      tag: "border",
-      opperator: "valkyrie"
-    },
-    {
-      title: "Valk c5", 
-      video: v1, 
-      tag: "lair",
-      opperator: "valkyrie"
-    },
+      tag: "theme-park",
+      opperator: "valkyrie",
+      description: "The idea is that the enemy can not see the camera, so when they walk in, you blow up the c4"
+    }
   ]
 
   const handleClick = (index: number) => {
@@ -49,6 +45,7 @@ function App() {
     {value: "border", label: "Border"},
     {value: "nighthaven-labs", label: "Nighthaven labs"},
     {value: "oregon", label: "Oregon"},
+    {value: "theme-park", label: "Theme park"},
   ]
 
   return (
@@ -79,7 +76,7 @@ function App() {
         </div>
       </div>
       {items.map((p, index) => (
-        p.tag == optionPicked  
+        p.tag === optionPicked  
         ? <Box values={p}/>
         : null
     ))}

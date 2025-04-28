@@ -5,8 +5,26 @@
     background-color: white;
     text-align: center;
 
-    margin-top: 20px; 
-    margin-bottom: 20px; 
+    margin: 20px 0px 20px 0px;
     padding-top: 30px;
     padding-bottom: 30px;
+  }
+
+  .opperator
+  {
+    margin: 0px 0px 20px 40px;
+    text-align: left;
+  }
+
+  .description  
+  {
+    margin: 20px 0px 0px 40px;
+    text-align: left;
+  }
+
+  .text  
+  {
+    margin: 5px 40px 0px 40px;
+    text-align: left;
+    color: #363636;
   }

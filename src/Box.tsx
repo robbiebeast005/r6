@@ -9,6 +9,7 @@ interface props
     video : string
     tag : string
     opperator : string
+    description : string
 }
 
 interface BoxProps {
@@ -21,12 +22,14 @@ function Box({ values } : BoxProps) {
   return (
     <div className='box'>
         <h1>{values.title}</h1>
-        <p>Opperator: {values.opperator}</p>
-        <video width="320" height="240" poster={""} controls>
+        <p className='opperator'><b>Opperator</b> {values.opperator}</p>
+        <video width="320" poster={""} controls>
             <source 
             src={values.video} 
             type='video/mp4'/>
         </video>
+        <p className='description'><b>Description</b></p>
+        <p className='text'> <em>{values.description}</em></p>
     </div>
   );
 }
