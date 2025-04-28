@@ -4,9 +4,9 @@ import Box from './Box.tsx';
 import './App.css';
 
 import DroneImage from './drone.png';
-import x from './drone.png';
-import y from './drone.png';
-import Video from './Video/celeste.mp4'
+
+// Video's
+import v1 from './Video/theme-park-r6.mp4'
 
 
 function App() {
@@ -28,13 +28,13 @@ function App() {
   const items : props[] = [
     {
       title: "Valk c4", 
-      video: Video, 
+      video: v1, 
       tag: "border",
       opperator: "valkyrie"
     },
     {
       title: "Valk c5", 
-      video: Video, 
+      video: v1, 
       tag: "lair",
       opperator: "valkyrie"
     },
