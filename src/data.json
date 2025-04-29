@@ -4,7 +4,7 @@
         "coastline": [
             {
                 "title": "Spawnpeek kitchen", 
-                "video": "r6/video/costline-jumpout-pulse.mp4", 
+                "video": "xq1oavKUm0w", 
                 "opperator": "Pulse",
                 "description": "Scan above every now and then to check if there are not above the hatch. Dont jump out to soon, check if the enemy is standing still"
             }
@@ -19,19 +19,26 @@
         "coastline": [
             {
                 "title": "Spawnpeek kitchen", 
-                "video": "r6/video/costline-jumpout-pulse.mp4", 
+                "video": "xq1oavKUm0w", 
                 "opperator": "Pulse",
                 "description": "Scan above every now and then to check if there are not above the hatch. Dont jump out to soon, check if the enemy is standing still"
             },
             {
                 "title": "Runout ruins", 
-                "video": "r6/video/runout.mp4", 
+                "video": "ty4LUoXh6B4", 
                 "opperator": "Any",
                 "description": "Shoot the barrier 19 times. A barrier will break after being shot 20 times. Make sure to spread out all shots, arround 4 shots for each horizontal barrier line"
             }
         ],
         "theme-park": [],
-        "villa": []
+        "villa": [
+            {
+                "title": "Runout bathroom",
+                "video" : "8qrp76Du_mM",
+                "opperator" : "Any",
+                "description" : "Break the window and glass in advance, so there is no sound queue jumping out. Go around 2:54 or 2:56"
+            }
+        ]
     },
 
 
@@ -41,7 +48,7 @@
         "theme-park" : [
             {
                 "title": "C4 below cafe", 
-                "video": "r6/video/theme-park-r6.mp4", 
+                "video": "g-7bOnPsAlg", 
                 "opperator": "Valkyrie",
                 "description": "The idea is that the enemy can not see the camera, so when they walk in, you blow up the c4"
             }
@@ -49,7 +56,7 @@
           "villa": [
             {
                 "title": "C4 below bedroom", 
-                "video": "r6/video/valk-c4-villa.mp4", 
+                "video": "x9v6geDSMVI", 
                 "opperator": "Valkyrie",
                 "description": "Good for anti roamclear"
             }
