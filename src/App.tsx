@@ -41,13 +41,13 @@ function App() {
   };
 
   const options = [
-    {value: "lair", label: "Lair"},
+    //{value: "lair", label: "Lair"},
     {value: "villa", label: "Villa"},
-    {value: "oregon", label: "Oregon"},
-    {value: "border", label: "Border"},
+    //{value: "oregon", label: "Oregon"},
+    //{value: "border", label: "Border"},
     {value: "coastline", label: "Coastline"},
     {value: "theme-park", label: "Theme park"},
-    {value: "nighthaven-labs", label: "Nighthaven labs"},
+    //{value: "nighthaven-labs", label: "Nighthaven labs"},
   ]
 
   return (
