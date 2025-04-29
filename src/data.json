@@ -38,6 +38,22 @@
                 "opperator" : "Any",
                 "description" : "Break the window and glass in advance, so there is no sound queue jumping out. Go around 2:54 or 2:56"
             }
+        ],
+        "bank" : [
+            {
+                "title": "Runout lobby",
+                "video" : "YHLHL6_2CbE",
+                "opperator" : "Valkyrie",
+                "description" : "Break the window and glass in advance, so there is no sound queue jumping out. Throw the camera around 2:50"
+            }
+        ],
+        "clubhouse": [
+            {
+                "title": "Construction Site",
+                "video" : "yNcm2RTFP98",
+                "opperator" : "Aruni",
+                "description" : "Punch the wall before the prep-fase is over"
+            }
         ]
     },
 
