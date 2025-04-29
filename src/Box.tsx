@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import './Box.css'
 
-import x from './drone.png';
-
 interface props
 {
     title : string
     video : string
-    tag : string
     opperator : string
     description : string
 }

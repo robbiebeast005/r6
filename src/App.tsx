@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import Box from './Box.tsx';
 import './App.css';
+import Data from './data.json'
 
 import DroneImage from './drone.png';
-
-// Video's
-import v1 from './Video/theme-park-r6.mp4'
+import SpawnpeekImage from './spawnpeek.png';
+import StratagieImage from './champion.png';
 
 
 function App() {
@@ -15,37 +15,39 @@ function App() {
   {
       title : string
       video : string
-      tag : string
       opperator : string,
       description : string
   }
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  const images = [DroneImage, DroneImage, DroneImage];
+  const images = [DroneImage, SpawnpeekImage, StratagieImage];
+
+  const drones  = Data.drones
+  const spawnpeek  = Data.spawnpeek
+  const strats = Data.strats
 
   const [optionPicked, setOptionPicked] = useState("")
-
-  const items : props[] = [
-    {
-      title: "C4 below cafe", 
-      video: v1, 
-      tag: "theme-park",
-      opperator: "valkyrie",
-      description: "The idea is that the enemy can not see the camera, so when they walk in, you blow up the c4"
-    }
-  ]
+  const [activeList, setActiveList]  = useState("drones");
 
   const handleClick = (index: number) => {
     setActiveIndex(index);
+    if (index == 0)
+      setActiveList("drones");
+    if (index == 1)
+      setActiveList("spawnpeek");
+    if (index == 2)
+      setActiveList("strats");
   };
 
   const options = [
     {value: "lair", label: "Lair"},
-    {value: "border", label: "Border"},
-    {value: "nighthaven-labs", label: "Nighthaven labs"},
+    {value: "villa", label: "Villa"},
     {value: "oregon", label: "Oregon"},
+    {value: "border", label: "Border"},
+    {value: "coastline", label: "Coastline"},
     {value: "theme-park", label: "Theme park"},
+    {value: "nighthaven-labs", label: "Nighthaven labs"},
   ]
 
   return (
@@ -75,10 +77,8 @@ function App() {
             onChange={(option) => setOptionPicked(option!.value)}/>
         </div>
       </div>
-      {items.map((p, index) => (
-        p.tag === optionPicked  
-        ? <Box values={p}/>
-        : null
+      {Data[activeList]?.[optionPicked]?.map((p : props, index) => (
+        <Box values={p}/>
     ))}
     </div>
   );
