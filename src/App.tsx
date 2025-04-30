@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import Box from './Box.tsx';
+import ImageBox from './ImageBox.tsx';
 import './App.css';
 import Data from './data.json'
 
@@ -32,11 +33,11 @@ function App() {
 
   const handleClick = (index: number) => {
     setActiveIndex(index);
-    if (index == 0)
+    if (index === 0)
       setActiveList("drones");
-    if (index == 1)
+    if (index === 1)
       setActiveList("spawnpeek");
-    if (index == 2)
+    if (index === 2)
       setActiveList("strats");
   };
 
@@ -77,11 +78,14 @@ function App() {
           <h1>Select map</h1>
           <Select
             options={options}
+            isSearchable={false}
             onChange={(option) => setOptionPicked(option!.value)}/>
         </div>
       </div>
       {Data[activeList]?.[optionPicked]?.map((p : props, index) => (
-        <Box values={p}/>
+        activeList === "drones" 
+        ? <ImageBox values={p}/>
+        : <Box values={p}/>
     ))}
     </div>
   );

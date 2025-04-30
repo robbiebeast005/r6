@@ -1,12 +1,12 @@
 
 {
     "drones": {
-        "coastline": [
+        "bank": [
             {
-                "title": "Spawnpeek kitchen", 
-                "video": "xq1oavKUm0w", 
-                "opperator": "Pulse",
-                "description": "Scan above every now and then to check if there are not above the hatch. Dont jump out to soon, check if the enemy is standing still"
+                "title": "Lobby drone", 
+                "img": "https://i.imgur.com/KBMae2C.jpeg", 
+                "floor": "2F",
+                "description": "Hidden drone for lobby control"
             }
         ],
         "theme-park": [],
