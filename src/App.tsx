@@ -46,6 +46,7 @@ function App() {
     {value: "villa", label: "Villa"},
     //{value: "oregon", label: "Oregon"},
     //{value: "border", label: "Border"},
+    {value: "outback", label: "Outback"},
     {value: "coastline", label: "Coastline"},
     {value: "clubhouse", label: "Clubhouse"},
     {value: "theme-park", label: "Theme park"},

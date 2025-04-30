@@ -54,6 +54,14 @@
                 "opperator" : "Aruni",
                 "description" : "Punch the wall before the prep-fase is over"
             }
+        ],
+        "outback" : [
+            {
+                "title": "Runout gas station",
+                "video" : "DzObar3NF5E",
+                "opperator" : "Any",
+                "description" : "Jump out instantly, open window before prep-faec is over. Walk to the corner, look at the brown spot for the vault prompt"
+            }
         ]
     },
 
