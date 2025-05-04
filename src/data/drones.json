@@ -1,0 +1,14 @@
+{
+    "drones": {
+        "bank": [
+            {
+                "title": "Lobby drone", 
+                "img": "https://i.imgur.com/KBMae2C.jpeg", 
+                "floor": "2F",
+                "description": "Hidden drone for lobby control"
+            }
+        ],
+        "theme-park": [],
+        "villa": []
+    }
+}

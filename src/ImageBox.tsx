@@ -8,12 +8,12 @@ interface props
     description : string
 }
 
-interface BoxProps {
+interface ImageBoxProps {
     values: props;
   }
   
 
-function ImageBox({ values } : BoxProps) {
+function ImageBox({ values } : ImageBoxProps) {
 
   return (
     <div className='box'>

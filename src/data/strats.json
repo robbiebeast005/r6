@@ -1,0 +1,21 @@
+{
+    "strats" : 
+    {
+    "coastline" : [],
+    "theme-park" : [
+        {
+            "title": "C4 below cafe", 
+            "video": "g-7bOnPsAlg", 
+            "opperator": "Valkyrie",
+            "description": "The idea is that the enemy can not see the camera, so when they walk in, you blow up the c4"
+        }
+    ],
+      "villa": [
+        {
+            "title": "C4 below bedroom", 
+            "video": "x9v6geDSMVI", 
+            "opperator": "Valkyrie",
+            "description": "Good for anti roamclear"
+        }
+    ]}
+}

@@ -1,0 +1,51 @@
+{
+    "spawnpeek":
+    {
+    "coastline": [
+        {
+            "title": "Spawnpeek kitchen", 
+            "video": "xq1oavKUm0w", 
+            "opperator": "Pulse",
+            "description": "Scan above every now and then to check if there are not above the hatch. Dont jump out to soon, check if the enemy is standing still"
+        },
+        {
+            "title": "Runout ruins", 
+            "video": "ty4LUoXh6B4", 
+            "opperator": "Any",
+            "description": "Shoot the barrier 19 times. A barrier will break after being shot 20 times. Make sure to spread out all shots, arround 4 shots for each horizontal barrier line"
+        }
+    ],
+    "theme-park": [],
+    "villa": [
+        {
+            "title": "Runout bathroom",
+            "video" : "8qrp76Du_mM",
+            "opperator" : "Any",
+            "description" : "Break the window and glass in advance, so there is no sound queue jumping out. Go around 2:54 or 2:56"
+        }
+    ],
+    "bank" : [
+        {
+            "title": "Runout lobby",
+            "video" : "YHLHL6_2CbE",
+            "opperator" : "Valkyrie",
+            "description" : "Break the window and glass in advance, so there is no sound queue jumping out. Throw the camera around 2:50"
+        }
+    ],
+    "clubhouse": [
+        {
+            "title": "Construction Site",
+            "video" : "yNcm2RTFP98",
+            "opperator" : "Aruni",
+            "description" : "Punch the wall before the prep-fase is over"
+        }
+    ],
+    "outback" : [
+        {
+            "title": "Runout gas station",
+            "video" : "DzObar3NF5E",
+            "opperator" : "Any",
+            "description" : "Jump out instantly, open window before prep-faec is over. Walk to the corner, look at the brown spot for the vault prompt"
+        }
+    ]}
+}

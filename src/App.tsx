@@ -2,57 +2,46 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import Box from './Box.tsx';
 import ImageBox from './ImageBox.tsx';
+
 import './App.css';
-import Data from './data.json'
+
+import Drones from './data/drones.json'
+import Spawnpeek from './data/spawnpeek.json'
+import Strats from './data/strats.json'
 
 import DroneImage from './drone.png';
 import SpawnpeekImage from './spawnpeek.png';
 import StratagieImage from './champion.png';
 
 
+const images = [DroneImage, SpawnpeekImage, StratagieImage];
+const data = [Drones.drones, Spawnpeek.spawnpeek, Strats.strats]
+
+
+const options = [
+  //{value: "lair", label: "Lair"},
+  {value: "bank", label: "Bank"},
+  {value: "villa", label: "Villa"},
+  //{value: "oregon", label: "Oregon"},
+  //{value: "border", label: "Border"},
+  {value: "outback", label: "Outback"},
+  {value: "coastline", label: "Coastline"},
+  {value: "clubhouse", label: "Clubhouse"},
+  {value: "theme-park", label: "Theme park"},
+  //{value: "nighthaven-labs", label: "Nighthaven labs"},
+]
+
 function App() {
 
-  interface props
-  {
-      title : string
-      video : string
-      opperator : string,
-      description : string
-  }
-
   const [activeIndex, setActiveIndex] = useState<number>(0);
-
-  const images = [DroneImage, SpawnpeekImage, StratagieImage];
-
-  const drones  = Data.drones
-  const spawnpeek  = Data.spawnpeek
-  const strats = Data.strats
-
-  const [optionPicked, setOptionPicked] = useState("")
-  const [activeList, setActiveList]  = useState("drones");
-
+  const [activeMap, setActiveMap] = useState("")
+  const [activeList, setActiveList]  = useState(data[0]);
+  
   const handleClick = (index: number) => {
     setActiveIndex(index);
-    if (index === 0)
-      setActiveList("drones");
-    if (index === 1)
-      setActiveList("spawnpeek");
-    if (index === 2)
-      setActiveList("strats");
+    setActiveList(data[index]);
   };
-
-  const options = [
-    //{value: "lair", label: "Lair"},
-    {value: "bank", label: "Bank"},
-    {value: "villa", label: "Villa"},
-    //{value: "oregon", label: "Oregon"},
-    //{value: "border", label: "Border"},
-    {value: "outback", label: "Outback"},
-    {value: "coastline", label: "Coastline"},
-    {value: "clubhouse", label: "Clubhouse"},
-    {value: "theme-park", label: "Theme park"},
-    //{value: "nighthaven-labs", label: "Nighthaven labs"},
-  ]
+  
 
   return (
     <div className='base'>
@@ -69,7 +58,6 @@ function App() {
               opacity: activeIndex === index ? 1 : 0.5,
               transition: 'opacity 0.3s',
             }}
-            alt={`Drone ${index + 1}`}
           />
         ))}
       </div>
@@ -79,13 +67,13 @@ function App() {
           <Select
             options={options}
             isSearchable={false}
-            onChange={(option) => setOptionPicked(option!.value)}/>
+            onChange={(option) => setActiveMap(option!.value)}/>
         </div>
       </div>
-      {Data[activeList]?.[optionPicked]?.map((p : props, index) => (
-        activeList === "drones" 
-        ? <ImageBox values={p}/>
-        : <Box values={p}/>
+      {activeList?.[activeMap]?.map((p, index) => (
+        activeIndex === 0 
+        ? <ImageBox key={index} values={p}/>
+        : <Box key={index} values={p}/>
     ))}
     </div>
   );
