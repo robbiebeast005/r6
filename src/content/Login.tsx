@@ -1,7 +1,10 @@
 import { initializeApp } from 'firebase/app';
-import { Auth, getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { Auth, getAuth, GoogleAuthProvider, signInWithPopup, User } from 'firebase/auth';
 import { child, get, getDatabase, onValue, ref } from 'firebase/database';
 import React, { useState } from 'react';
+import Google from '../images/google-logo.png'
+
+import './Login.css'
 
 const config = {
     apiKey: "AIzaSyC6blLd2agAeSPZtQ8kSKD-zlyGjWf_hq0",
@@ -22,22 +25,21 @@ const config = {
     const provider = new GoogleAuthProvider();
     const dbRef = ref(getDatabase());
 
+    var user : User | null
     
 function Login (){
-    var uid = ""
     const [status, setStatus] = useState("empty")
+    const [profile, setProfile] = useState("")
 
     async function click()
     {
-        await signInWithPopup(auth, provider).then(result => result.user.uid ? uid = result.user.uid : uid = "username not retrevable");
+        await signInWithPopup(auth, provider).then(result => result.user ? user = result.user : user = null);
         login()
     }
 
     function login()
     {
-        console.log("login")
-
-        get(child(dbRef, (`user-data/`+ uid))).
+        get(child(dbRef, (`user-data/`+ user?.uid))).
         then((snapshot) => {
             if (snapshot.exists()) {
                 setStatus(snapshot.val().toString());
@@ -47,22 +49,28 @@ function Login (){
         }).catch((error) => {
             setStatus(error)
         });
+
+        if (user?.photoURL)
+            setProfile(user?.photoURL)
     }
 
 
     return(
-        <div>
-            <p>{uid}</p>
-            <button onClick={click}>Login</button>
-
+        <div className='box'>
         {
 
-        status === "true" 
+        user
         ?
-        <p>Status: {status}</p>
+            <div>
+                <img src={profile} alt="profile" />
+                <p>Logged in as: {user.displayName}</p>
+            </div>
         :
-        <p>Status: false</p>
-    }
+            <button className='button' onClick={click}>
+                <img className='img' src={Google} alt="logo" />
+                Sign in with Google
+            </button>
+        }
         </div>
 
     );

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-import Box from './Box.tsx';
-import ImageBox from './ImageBox.tsx';
+import Box from './content/Box.tsx';
+import Login from './content/Login.tsx';
+import ImageBox from './content/ImageBox.tsx';
 
 import './App.css';
 
@@ -9,9 +10,18 @@ import Drones from './data/drones.json'
 import Spawnpeek from './data/spawnpeek.json'
 import Strats from './data/strats.json'
 
-import DroneImage from './drone.png';
-import SpawnpeekImage from './spawnpeek.png';
-import StratagieImage from './champion.png';
+import DronePath from './images/drone.png';
+import SpawnpeekPath from './images/spawnpeek.png';
+import StratagiePath from './images/champion.png';
+
+
+const DroneImage = new Image()
+const SpawnpeekImage = new Image()
+const StratagieImage = new Image()
+
+DroneImage.src = DronePath
+SpawnpeekImage.src = SpawnpeekPath
+StratagieImage.src = StratagiePath
 
 
 const images = [DroneImage, SpawnpeekImage, StratagieImage];
@@ -33,6 +43,8 @@ const options = [
 
 function App() {
 
+
+  
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [activeMap, setActiveMap] = useState("")
   const [activeList, setActiveList]  = useState(data[0]);
@@ -46,29 +58,30 @@ function App() {
   return (
     <div className='base'>
       <div className='header'>
-        {images.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            onClick={() => handleClick(index)}
-            style={{
-              width: '100px',
-              height: 'auto',
-              cursor: 'pointer',
-              opacity: activeIndex === index ? 1 : 0.5,
-              transition: 'opacity 0.3s',
-            }}
-          />
-        ))}
+          {images.map((img, index) => (
+            <img
+            
+              key={index}
+              src={img.src}
+              onClick={() => handleClick(index)}
+              style={{
+                width: '100px',
+                height: 100 * img.height / img.width,
+                cursor: 'pointer',
+                opacity: activeIndex === index ? 1 : 0.5,
+                transition: 'opacity 0.3s',
+              }}
+            />
+          ))}
       </div>
+      <Login />
       <div className='select-box'>
-        <div className='select'>
           <h1>Select map</h1>
           <Select
+            className = 'select'
             options={options}
             isSearchable={false}
             onChange={(option) => setActiveMap(option!.value)}/>
-        </div>
       </div>
       {activeList?.[activeMap]?.map((p, index) => (
         activeIndex === 0 
