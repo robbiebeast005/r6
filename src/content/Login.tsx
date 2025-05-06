@@ -2,7 +2,10 @@ import { initializeApp } from 'firebase/app';
 import { Auth, getAuth, GoogleAuthProvider, signInWithPopup, User } from 'firebase/auth';
 import { child, get, getDatabase, onValue, ref } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
+
 import Google from '../images/google-logo.png'
+import SilverCoin from '../images/coin-silver.png'
+import GoldCoin from '../images/coin-gold.png'
 
 import './Login.css'
 
@@ -63,6 +66,7 @@ function Login (){
         ?
             <div className='user'>
                 <img className='profile' src={user?.photoURL ? user?.photoURL : ""} alt="profile" />
+                <img src={SilverCoin} alt="" />
                 <p>{premium ? '⭐' : ''} <b>{user.displayName}</b></p>
             </div>
         :

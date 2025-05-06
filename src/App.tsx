@@ -36,6 +36,7 @@ const options = [
   //{value: "border", label: "Border"},
   {value: "outback", label: "Outback"},
   {value: "coastline", label: "Coastline"},
+  {value: "consulate", label: "Consulate"},
   {value: "clubhouse", label: "Clubhouse"},
   {value: "theme-park", label: "Theme park"},
   //{value: "nighthaven-labs", label: "Nighthaven labs"},
