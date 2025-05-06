@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { Auth, getAuth, GoogleAuthProvider, signInWithPopup, User } from 'firebase/auth';
 import { child, get, getDatabase, onValue, ref } from 'firebase/database';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Google from '../images/google-logo.png'
 
 import './Login.css'
@@ -25,45 +25,45 @@ const config = {
     const provider = new GoogleAuthProvider();
     const dbRef = ref(getDatabase());
 
-    var user : User | null
     
 function Login (){
-    const [status, setStatus] = useState("empty")
-    const [profile, setProfile] = useState("")
+    const [user, setUser] = useState<User | null>(null)
+    const [premium, setPremium] = useState(false)
+
+    useEffect(() => {
+        login()
+      }, [user]);
 
     async function click()
     {
-        await signInWithPopup(auth, provider).then(result => result.user ? user = result.user : user = null);
-        login()
+        await signInWithPopup(auth, provider).then(result => result.user ? setUser(result.user) : setUser(null));
     }
 
+    
     function login()
     {
         get(child(dbRef, (`user-data/`+ user?.uid))).
-        then((snapshot) => {
+        then(snapshot => {
             if (snapshot.exists()) {
-                setStatus(snapshot.val().toString());
-            } else {
-                setStatus("false");
+                if(snapshot.val().toString() === "true")
+                {
+                    setPremium(true)
+                }
             }
         }).catch((error) => {
-            setStatus(error)
+            console.log(error)
         });
 
-        if (user?.photoURL)
-            setProfile(user?.photoURL)
     }
-
 
     return(
         <div className='box'>
         {
-
         user
         ?
-            <div>
-                <img src={profile} alt="profile" />
-                <p>Logged in as: {user.displayName}</p>
+            <div className='user'>
+                <img className='profile' src={user?.photoURL ? user?.photoURL : ""} alt="profile" />
+                <p>{premium ? '⭐' : ''} <b>{user.displayName}</b></p>
             </div>
         :
             <button className='button' onClick={click}>
@@ -75,5 +75,6 @@ function Login (){
 
     );
 }
+
 
 export default Login;

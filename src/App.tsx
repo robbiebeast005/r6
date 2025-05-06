@@ -60,7 +60,6 @@ function App() {
       <div className='header'>
           {images.map((img, index) => (
             <img
-            
               key={index}
               src={img.src}
               onClick={() => handleClick(index)}
