@@ -19,7 +19,7 @@ function ImageBox({ values } : ImageBoxProps) {
     <div className='box'>
         <h1>{values.title}</h1>
         <img
-          width="320"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           src={values.img}
         />
         <p className='description'><b>Description</b></p>

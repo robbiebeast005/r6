@@ -66,8 +66,12 @@ function Login (){
         ?
             <div className='user'>
                 <img className='profile' src={user?.photoURL ? user?.photoURL : ""} alt="profile" />
-                <img src={SilverCoin} alt="" />
-                <p>{premium ? '⭐' : ''} <b>{user.displayName}</b></p>
+                <p><b>{user.displayName}</b></p>
+                {
+                    premium ? 
+                    <img src={GoldCoin} alt="" className='coin'/> : 
+                    <img src={SilverCoin} alt="" className='coin'/>
+                } 
             </div>
         :
             <button className='button' onClick={click}>
