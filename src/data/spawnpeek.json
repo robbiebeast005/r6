@@ -15,7 +15,20 @@
             "description": "Shoot the barrier 19 times. A barrier will break after being shot 20 times. Make sure to spread out all shots, arround 4 shots for each horizontal barrier line"
         }
     ],
-    "theme-park": [],
+    "theme-park": [
+        {
+            "title": "Runout teacups",
+            "video" : "dNkRcwU3O2g",
+            "opperator" : "Any",
+            "description" : "Break the barrier before the prep fase is over. Look at the camera and wait unit it gets shot or you hear footsteps. The vault prompt can be tricky, but it is on the silver part inbetween the rust. Praticing in a offline map is advised"
+        },
+        {
+            "title": "Runout main entrance",
+            "video" : "wyhMLD0FEZo",
+            "opperator" : "Valkyrie",
+            "description" : "Dont fully break the barrier, otherwise the enemy can see that the door is opened. Now it is invisble. Throw the camera between 2:55 and 2:50"
+        }
+    ],
     "villa": [
         {
             "title": "Runout bathroom",
